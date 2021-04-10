@@ -1,15 +1,20 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+    <View style={{height: '100%', width: '100%', display: 'flex',}}>
+      <View style={{height: 80, backgroundColor:'tomato'}}><Text>buttons here</Text></View>
+      <View style={{flexGrow: 1, flexShrink: 1, flexBasis: 'auto', padding: 10}}>
+      <TouchableOpacity style={{borderRadius: 50}}>
+      <Image style={{height: '100%', width: '100%', resizeMode: 'cover', alignSelf: 'stretch', borderRadius: 50}} source={{uri: 'https://picsum.photos/1080/1920',}} />
+      </TouchableOpacity>
+      
+      </View>
+        <View style={{height: 80, backgroundColor:'tomato'}}><Text>buttons here</Text></View>
     </View>
   );
 }

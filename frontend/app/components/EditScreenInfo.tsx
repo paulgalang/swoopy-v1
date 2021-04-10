@@ -1,6 +1,6 @@
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 import Colors from '../constants/Colors';
 import { MonoText } from './StyledText';
@@ -8,8 +8,8 @@ import { Text, View } from './Themed';
 
 export default function EditScreenInfo({ path }: { path: string }) {
   return (
-    <View>
-      <View style={styles.getStartedContainer}>
+    <View style={{backgroundColor: '#FF6347'}}>
+      {/* <View style={styles.getStartedContainer}>
         <Text
           style={styles.getStartedText}
           lightColor="rgba(0,0,0,0.8)"
@@ -30,13 +30,15 @@ export default function EditScreenInfo({ path }: { path: string }) {
           darkColor="rgba(255,255,255,0.8)">
           Change any of the text, save the file, and your app will automatically update.
         </Text>
-      </View>
+      </View> */}
 
-      <View style={styles.helpContainer}>
+      <View style={{height: '50%', width: '100%', backgroundColor: 'yellow'}}>
+        <Text>Hello</Text>
+        {/* <Image style={{height: '1024pt', width: '768pt', backgroundColor: 'tomato'}}source={{uri: 'https://i.picsum.photos/id/969/1025/768.jpg?hmac=sH6hbi3ZUiJaWsOQ7eIKCQ4WZwbis7duMGQvx313CBA',}} /> */}
         <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-          <Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
+          {/* <Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
             Tap here if your app doesn't automatically update after making changes
-          </Text>
+          </Text> */}
         </TouchableOpacity>
       </View>
     </View>
@@ -98,6 +100,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginHorizontal: 20,
     alignItems: 'center',
+    backgroundColor: 'tomato'
   },
   helpLink: {
     paddingVertical: 15,
