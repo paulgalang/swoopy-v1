@@ -4,19 +4,23 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
-import Navigation from './navigation';
+import TabOneScreen from './screens/TabOneScreen';
+import { View, SafeAreaView } from 'react-native';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
+  const x = 'haha';
 
   if (!isLoadingComplete) {
     return null;
   } else {
     return (
       <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
+        <SafeAreaView>
+          <TabOneScreen />
+        </SafeAreaView>
+        {/* <StatusBar /> */}
       </SafeAreaProvider>
     );
   }
